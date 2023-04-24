@@ -1,6 +1,10 @@
 # pos_cevicheria
 
-A new Flutter project.
+A new Flutter project. An movil aplication of sale point service of a restaurat
+
+1. Desing phase
+- You can see the mockups of each screen at this url. 
+https://www.figma.com/file/iHBm8HTK9TgMVH06UPGJcH/Pos_cevicheria?node-id=0%3A1&t=bEoLX9PZAyFsLXlv-1 
 
 ## Getting Started
 
