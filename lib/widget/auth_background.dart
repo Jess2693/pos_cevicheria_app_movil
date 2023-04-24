@@ -56,7 +56,16 @@ class _FirstBox extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: size.height * 0.6,
-      color: AppTheme.primary,
+      //color: AppTheme.primary,
+      decoration: const BoxDecoration(
+        color: AppTheme.primary,
+        borderRadius: BorderRadius.only(
+          //topLeft: Radius.circular(100),
+          topRight: Radius.circular(10),
+          //bottomLeft: Radius.circular(10),
+          bottomRight: Radius.circular(180),
+        ),
+      ),
     );
   }
 }
