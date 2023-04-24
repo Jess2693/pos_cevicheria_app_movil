@@ -30,7 +30,7 @@ class LoginScreen extends StatelessWidget {
               ],
             ),
           ),
-          const Text("Yeveloper© 2023")
+          Text("Yeveloper© 2023")
         ],
       ),
     )));
