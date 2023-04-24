@@ -44,7 +44,7 @@ class _loginForm extends StatelessWidget {
       child: Form(
           child: Column(
         children: [
-          TextField(
+          TextFormField(
             autocorrect: false,
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecorations.authInputDecoration(
@@ -55,7 +55,7 @@ class _loginForm extends StatelessWidget {
           const SizedBox(
             height: 15,
           ),
-          TextField(
+          TextFormField(
             autocorrect: false,
             keyboardType: TextInputType.visiblePassword,
             decoration: InputDecorations.authInputDecoration(
