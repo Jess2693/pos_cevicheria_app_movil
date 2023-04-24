@@ -20,7 +20,7 @@ class AuthBackground extends StatelessWidget {
               child: Center(
                   child: Image.asset('assets/logo.png'), heightFactor: 1.3)),
           _HeaderIcon(),
-          this.child
+          child
         ],
       ),
     );
