@@ -70,7 +70,7 @@ class _loginForm extends StatelessWidget {
                 keyboardType: TextInputType.visiblePassword,
                 decoration: InputDecorations.authInputDecoration(
                     hintText: '*****',
-                    labelText: 'Contraseña: ',
+                    labelText: 'Contraseña : ',
                     prefixIcon: Icons.key),
                 validator: (value) {
                   return (value != null && value.length >= 8)
