@@ -18,7 +18,7 @@ class AuthBackground extends StatelessWidget {
           _FirstBox(),
           SafeArea(
               child: Center(
-                  child: Image.asset('assets/logo.png'), heightFactor: 1.3)),
+                  heightFactor: 1.3, child: Image.asset('assets/logo.png'))),
           _HeaderIcon(),
           child
         ],
