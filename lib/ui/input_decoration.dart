@@ -7,10 +7,18 @@ class InputDecorations {
       required String labelText,
       IconData? prefixIcon}) {
     return InputDecoration(
-        enabledBorder: const UnderlineInputBorder(
-            borderSide: BorderSide(color: AppTheme.primary)),
-        focusedBorder: const UnderlineInputBorder(
-            borderSide: BorderSide(color: AppTheme.primary, width: 2)),
+        filled: true,
+        fillColor: Colors.blue[40],
+        enabledBorder: OutlineInputBorder(
+            //enabledBorder: const UnderlineInputBorder(
+            borderSide: const BorderSide(color: AppTheme.tertiary),
+            borderRadius: BorderRadius.circular(25)),
+        focusedBorder: OutlineInputBorder(
+          borderSide: const BorderSide(color: AppTheme.secondary),
+          borderRadius: BorderRadius.circular(25.0),
+        ),
+
+        //borderSide: BorderSide(color: AppTheme.primary, width: 2)),
         hintText: hintText,
         labelText: labelText,
         labelStyle: const TextStyle(color: AppTheme.primary),
