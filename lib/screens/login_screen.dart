@@ -64,7 +64,7 @@ class _loginForm extends StatelessWidget {
                 validator: (value) {
                   String pattern =
                       r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
-                  RegExp regExp = new RegExp(pattern);
+                  RegExp regExp = RegExp(pattern);
                   return regExp.hasMatch(value ?? '')
                       ? null
                       : 'Correo incorrecto';
@@ -92,21 +92,30 @@ class _loginForm extends StatelessWidget {
                 height: 15,
               ),
               MaterialButton(
+                  disabledColor: Colors.grey,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10)),
                   color: AppTheme.primary,
                   elevation: 0,
                   child: Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 80, vertical: 15),
-                      child: const Text(
-                        'Entrar',
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 80, vertical: 15),
+                      child: Text(
+                        loginForm.isLoading ? 'Espere' : 'Entrar',
                         style: TextStyle(color: AppTheme.tertiary),
                       )),
-                  onPressed: () {
-                    if (!loginForm.isValidForm()) return;
-                    Navigator.pushReplacementNamed(context, 'home');
-                  })
+                  onPressed: loginForm.isLoading
+                      ? null
+                      : () async {
+                          FocusScope.of(context).unfocus();
+
+                          if (!loginForm.isValidForm()) return;
+                          loginForm.isLoading = true;
+                          await Future.delayed(const Duration(seconds: 2));
+                          loginForm.isLoading = false;
+
+                          Navigator.pushReplacementNamed(context, 'home');
+                        })
             ],
           )),
     );
