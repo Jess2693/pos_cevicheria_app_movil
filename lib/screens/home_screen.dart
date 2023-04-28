@@ -7,6 +7,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: NavigationDrawerWiget(),
       appBar: AppBar(
         title: const Text('Inicio'),
         backgroundColor: AppTheme.primary,
@@ -16,10 +17,28 @@ class HomeScreen extends StatelessWidget {
             child: Icon(Icons.account_circle_outlined),
           )
         ],
-        leading: const Icon(Icons.menu),
+        //leading: const Icon(Icons.menu),
       ),
       body: const Center(
         child: Text('HomeScreen'),
+      ),
+    );
+  }
+}
+
+class NavigationDrawerWiget extends StatelessWidget {
+  final padding = EdgeInsets.symmetric(horizontal: 20);
+
+  @override
+  Widget build(BuildContext context) {
+    final isCollapsed = false;
+
+    return Container(
+      width: isCollapsed ? MediaQuery.of(context).size.width * 0.2 : null,
+      child: Drawer(
+        child: Container(
+          color: AppTheme.primary,
+        ),
       ),
     );
   }
