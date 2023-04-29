@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pos_cevicheria/theme/app_theme.dart';
+import 'package:pos_cevicheria/widget/widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -7,7 +8,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: NavigationDrawerWiget(),
+      drawer: const NavBarWidget(),
       appBar: AppBar(
         title: const Text('Inicio'),
         backgroundColor: AppTheme.primary,
@@ -21,24 +22,6 @@ class HomeScreen extends StatelessWidget {
       ),
       body: const Center(
         child: Text('HomeScreen'),
-      ),
-    );
-  }
-}
-
-class NavigationDrawerWiget extends StatelessWidget {
-  final padding = EdgeInsets.symmetric(horizontal: 20);
-
-  @override
-  Widget build(BuildContext context) {
-    final isCollapsed = false;
-
-    return Container(
-      width: isCollapsed ? MediaQuery.of(context).size.width * 0.2 : null,
-      child: Drawer(
-        child: Container(
-          color: AppTheme.primary,
-        ),
       ),
     );
   }
