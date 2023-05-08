@@ -127,8 +127,8 @@ class _productForm extends StatelessWidget {
                 Card(
                     color: AppTheme.tertiary,
                     child: Padding(
-                        padding: EdgeInsets.all(10),
-                        child: Container(
+                        padding: const EdgeInsets.all(10),
+                        child: SizedBox(
                           height: size.height * 0.3,
                           width: size.width * 0.6,
                         ))),
