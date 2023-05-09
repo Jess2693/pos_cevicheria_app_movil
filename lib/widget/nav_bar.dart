@@ -12,7 +12,7 @@ class NavBarWidget extends StatelessWidget {
         children: [
           ListView(
             shrinkWrap: true,
-            padding: EdgeInsets.all(8),
+            padding: const EdgeInsets.all(8),
             children: [
               DrawerHeader(
                 child: Container(
@@ -34,6 +34,7 @@ class NavBarWidget extends StatelessWidget {
                     style: TextStyle(
                         color: Colors.white, fontWeight: FontWeight.bold)),
                 onTap: () {
+                  Navigator.pushNamed(context, 'home');
                   //Navigator.pushNamed(context, '');
                 },
                 trailing: const Icon(Icons.arrow_forward_ios,
@@ -48,6 +49,7 @@ class NavBarWidget extends StatelessWidget {
                     style: TextStyle(
                         color: Colors.white, fontWeight: FontWeight.bold)),
                 onTap: () {
+                  Navigator.pushNamed(context, 'orders');
                   //Navigator.pushNamed(context, '');
                 },
                 trailing: const Icon(Icons.arrow_forward_ios,
@@ -62,6 +64,7 @@ class NavBarWidget extends StatelessWidget {
                     style: TextStyle(
                         color: Colors.white, fontWeight: FontWeight.bold)),
                 onTap: () {
+                  Navigator.pushNamed(context, 'products');
                   //Navigator.pushNamed(context, '');
                 },
                 trailing: const Icon(Icons.arrow_forward_ios,
@@ -76,7 +79,7 @@ class NavBarWidget extends StatelessWidget {
                     style: TextStyle(
                         color: Colors.white, fontWeight: FontWeight.bold)),
                 onTap: () {
-                  //Navigator.pushNamed(context, '');
+                  Navigator.pushNamed(context, 'tables');
                 },
                 trailing: const Icon(Icons.arrow_forward_ios,
                     color: Color.fromARGB(255, 255, 255, 255)),
@@ -90,7 +93,8 @@ class NavBarWidget extends StatelessWidget {
                     style: TextStyle(
                         color: Colors.white, fontWeight: FontWeight.bold)),
                 onTap: () {
-                  //Navigator.pushNamed(context, '');
+                  Navigator.pushNamed(context, 'categories');
+                  //Navigator.pushNamed(context, 'category');
                 },
                 trailing: const Icon(Icons.arrow_forward_ios,
                     color: Color.fromARGB(255, 255, 255, 255)),

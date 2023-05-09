@@ -10,7 +10,9 @@ class OrderScreen extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         leading: GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.pop(context);
+          },
           child: const Icon(Icons.arrow_back, color: AppTheme.primary),
         ),
         backgroundColor: AppTheme.tertiary,
