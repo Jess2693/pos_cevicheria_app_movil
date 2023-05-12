@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pos_cevicheria/widget/product_card.dart';
 
 class ListProductsScreen extends StatelessWidget {
   const ListProductsScreen({Key? key}) : super(key: key);
@@ -10,10 +11,12 @@ class ListProductsScreen extends StatelessWidget {
         title: Text("Productos"),
       ),
       body: ListView.builder(
-          itemCount: 10, itemBuilder: (context, index) => Text('Item: $index')),
-      floatingActionButton: const FloatingActionButton(
-        onPressed: null,
-        child: Icon(Icons.add),
+          itemCount: 10, itemBuilder: (context, index) => const ProductCard()),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pushNamed(context, 'product');
+        },
+        child: const Icon(Icons.add),
       ),
     );
   }
