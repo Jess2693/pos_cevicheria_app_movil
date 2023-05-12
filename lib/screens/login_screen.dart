@@ -30,7 +30,7 @@ class LoginScreen extends StatelessWidget {
                 ),
                 ChangeNotifierProvider(
                   create: (_) => LoginFormProvider(),
-                  child: _loginForm(),
+                  child: _LoginForm(),
                 ),
               ],
             ),
@@ -42,7 +42,7 @@ class LoginScreen extends StatelessWidget {
   }
 }
 
-class _loginForm extends StatelessWidget {
+class _LoginForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final loginForm = Provider.of<LoginFormProvider>(context);
@@ -92,30 +92,31 @@ class _loginForm extends StatelessWidget {
                 height: 15,
               ),
               MaterialButton(
-                  disabledColor: Colors.grey,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)),
-                  color: AppTheme.primary,
-                  elevation: 0,
-                  child: Container(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 80, vertical: 15),
-                      child: Text(
-                        loginForm.isLoading ? 'Espere' : 'Entrar',
-                        style: TextStyle(color: AppTheme.tertiary),
-                      )),
-                  onPressed: loginForm.isLoading
-                      ? null
-                      : () async {
-                          FocusScope.of(context).unfocus();
+                disabledColor: Colors.grey,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)),
+                color: AppTheme.primary,
+                elevation: 0,
+                onPressed: loginForm.isLoading
+                    ? null
+                    : () async {
+                        FocusScope.of(context).unfocus();
 
-                          if (!loginForm.isValidForm()) return;
-                          loginForm.isLoading = true;
-                          await Future.delayed(const Duration(seconds: 2));
-                          loginForm.isLoading = false;
+                        if (!loginForm.isValidForm()) return;
+                        loginForm.isLoading = true;
+                        await Future.delayed(const Duration(seconds: 2));
+                        loginForm.isLoading = false;
 
-                          Navigator.pushReplacementNamed(context, 'home');
-                        })
+                        Navigator.pushReplacementNamed(context, 'home');
+                      },
+                child: Container(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 80, vertical: 15),
+                    child: Text(
+                      loginForm.isLoading ? 'Espere' : 'Entrar',
+                      style: const TextStyle(color: AppTheme.tertiary),
+                    )),
+              )
             ],
           )),
     );

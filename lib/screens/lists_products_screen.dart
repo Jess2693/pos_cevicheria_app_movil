@@ -8,7 +8,7 @@ class ListProductsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Productos"),
+        title: const Text("Productos"),
       ),
       body: ListView.builder(
           itemCount: 10, itemBuilder: (context, index) => const ProductCard()),

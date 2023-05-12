@@ -21,14 +21,14 @@ class ProductScreen extends StatelessWidget {
           ],
           leading: IconButton(
               onPressed: () => Navigator.pop(context),
-              icon: Icon(Icons.arrow_back_ios_new)),
+              icon: const Icon(Icons.arrow_back_ios_new)),
           //leading: const Icon(Icons.arrow_back_ios_new),
         ),
-        body: _productForm());
+        body: _ProductForm());
   }
 }
 
-class _productForm extends StatelessWidget {
+class _ProductForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -137,13 +137,13 @@ class _productForm extends StatelessWidget {
                         ))),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             ElevatedButton.icon(
                 onPressed: () {},
-                icon: Icon(Icons.save),
-                label: Text('Guardar'))
+                icon: const Icon(Icons.save),
+                label: const Text('Guardar'))
           ],
         )),
       ),

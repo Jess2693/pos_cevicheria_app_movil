@@ -13,7 +13,7 @@ class OrderScreen extends StatelessWidget {
           onTap: () {
             Navigator.pop(context);
           },
-          child: const Icon(Icons.arrow_back, color: AppTheme.primary),
+          child: const Icon(Icons.close, color: AppTheme.primary),
         ),
         backgroundColor: AppTheme.tertiary,
         title: const Text(
